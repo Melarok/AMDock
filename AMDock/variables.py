@@ -32,7 +32,7 @@ class Variables:
             self.autogrid = self.data_dir.joinpath('autogrid4_mac').as_posix()
             self.autodock = self.data_dir.joinpath('autodock4_mac').as_posix()
         else:
-            self.vina_exec = self.data_dir.joinpath('vina').as_posix()
+            self.vina_exec = self.data_dir.joinpath('vina_1.2.5').as_posix()
             self.autogrid = self.data_dir.joinpath('autogrid4').as_posix()
             self.autodock = self.data_dir.joinpath('autodock4').as_posix()
         self.autoligand_py = self.data_dir.joinpath('AutoLigand.py').as_posix()
@@ -183,7 +183,7 @@ class Variables:
                          "Molecular Graphics System.</span></p></body></html> "
 
         self.style_file = self.data_dir.joinpath('style.css').as_posix()
-        self.config_file = self.data_dir.joinpath('configration.ini').as_posix()
+        self.config_file = self.data_dir.joinpath('configuration.ini').as_posix()
         self.splashscreen_path = self.data_dir.joinpath('splashscreen.png').as_posix()
         self.app_icon = self.data_dir.joinpath('amdock_icon.png').as_posix()
         self.reset_icon = self.data_dir.joinpath('reset.png').as_posix()

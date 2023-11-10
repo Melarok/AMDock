@@ -2666,8 +2666,7 @@ class Program_body(QWidget):
                                 fill_info.center[1]), '--center_z', '{}'.format(fill_info.center[2]), '--size_x',
                                     '{}'.format(self.size[0]), '--size_y', '{}'.format(self.size[1]), '--size_z',
                                     '{}'.format(self.size[2]), '--cpu', str(self.AMDock.ncpu), '--num_modes', '1',
-                                    '--exhaustiveness', str(self.AMDock.exhaustiveness), '--out',
-                                    vina_output, "--log", self.AMDock.target.vina_log]
+                                    '--exhaustiveness', str(self.AMDock.exhaustiveness), '--out', vina_output] #, "&>", self.AMDock.target.vina_log]
                         vina = {'AutoDock Vina': [self.AMDock.vina_exec, vina_arg]}
                         queue.put(vina)
 
@@ -2684,7 +2683,7 @@ class Program_body(QWidget):
                                 '--size_x', '{}'.format(self.size[0]), '--size_y', '{}'.format(self.size[1]),
                                 '--size_z', '{}'.format(self.size[2]), '--cpu', str(self.AMDock.ncpu), '--num_modes',
                                 str(self.AMDock.poses_vina), '--exhaustiveness', str(self.AMDock.exhaustiveness),
-                                '--out', self.AMDock.target.vina_output, "--log", self.AMDock.target.vina_log]
+                                '--out', self.AMDock.target.vina_output] #, "&>", self.AMDock.target.vina_log]
                     vina = {'AutoDock Vina': [self.AMDock.vina_exec, vina_arg]}
                     queue.put(vina)
                 if self.AMDock.project.mode == 1:
@@ -2710,7 +2709,7 @@ class Program_body(QWidget):
                                         '{}'.format(self.size[0]), '--size_y', '{}'.format(self.size[1]), '--size_z',
                                         '{}'.format(self.size[2]), '--cpu', str(self.AMDock.ncpu), '--num_modes', '1',
                                         '--exhaustiveness', str(self.AMDock.exhaustiveness), '--out',
-                                        vina_output, "--log", self.AMDock.offtarget.vina_log]
+                                        vina_output]#, "&>", self.AMDock.offtarget.vina_log]
                             vina = {'AutoDock Vina': [self.AMDock.vina_exec, vina_arg]}
                             queue.put(vina)
 
@@ -2727,8 +2726,7 @@ class Program_body(QWidget):
                                      '{}'.format(self.size[0]), '--size_y', '{}'.format(self.size[0]), '--size_z',
                                      '{}'.format(self.size[2]), '--cpu', str(self.AMDock.ncpu), '--num_modes',
                                      str(self.AMDock.poses_vina), '--exhaustiveness', str(self.AMDock.exhaustiveness),
-                                     '--out', self.AMDock.offtarget.vina_output, "--log",
-                                     self.AMDock.offtarget.vina_log]
+                                     '--out', self.AMDock.offtarget.vina_output] #, "&>",self.AMDock.offtarget.vina_log]
                         vinaB = {'AutoDock Vina B': [self.AMDock.vina_exec, vina_argB]}
                         queue.put(vinaB)
 
