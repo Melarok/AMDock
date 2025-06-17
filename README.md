@@ -7,89 +7,49 @@ AMDock (Assisted Molecular Docking) is a user-friendly graphical tool to assist 
 complexes using Autodock-Vina or AutoDock4. This tool integrates several external programs for processing docking input 
 files, define the search space (box) and perform docking under user’s supervision.
 
-**Version 1.6.x for Linux** (**Build 1.6.1-beta**)
+## Installation
 
-**DOCUMENTATION**
+Create a new conda environment for AMDock and install the required dependencies:
 
-Manual, tutorials and test files are located in **Doc** folder. (May be out of date. Please check the wiki)
-
-**Cite us**
-
-Valdes-Tresanco, M.S., Valdes-Tresanco, M.E., Valiente, P.A. and Moreno E. AMDock: a versatile graphical tool for
- assisting molecular docking with Autodock Vina and Autodock4. Biol Direct 15, 12 (2020). https://doi.org/10.1186/s13062-020-00267-2
- 
- <a href="https://www.scimagojr.com/journalsearch.php?q=5800173376&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank"><img border="0" src="https://www.scimagojr.com/journal_img.php?id=5800173376" alt="SCImago Journal &amp; Country Rank"  /></a>
-
-**INSTALL**
-
-Installation can be carried out in two ways
-1. (For Linux only) Using a conda environment. 
-
-Note: macOS users can use this procedure, however, PyMOL must be compiled using this environment's Python interpreter, 
-since there is no working version of PyMOL for mac in the anaconda repositories. 
-
-To do this, proceed as follows:
-
-If you don't have conda installed, please visit the [Miniconda download page](https://docs.conda.io/en/latest/miniconda.html).
-
-Those with an existing conda installation may wish to create a new conda "environment" to avoid conflicts with what 
-you already have installed. To do this:
-
-    conda create --name AMDock python=3.9
+    conda create --name AMDock -c conda-forge -c bioconda python=3.9.\* pymol-open-source openbabel pdb2pqr
     conda activate AMDock
+    pip install git+https://github.com/Valdes-Tresanco-MS/AutoDockTools_py3 PyQt5
 
-(Note that you would need to perform the "conda activate" step every time you wish to use AMDock in a new terminal; 
-  it might be appropriate to add this to your start-up script. Creating a new environment should not be necessary if 
-  you only use conda for AMDock.)
+If you want to install AMDock directly from this repo run:
 
-Once this is done, type:
+    pip install git+https://github.com/Melarok/AMDock.git
 
-    conda install -c conda-forge pymol-open-source openbabel pdb2pqr
-
-and finally: 
-
-    python -m pip install git+https://github.com/Valdes-Tresanco-MS/AutoDockTools_py3 PyQt5
-    python -m pip install AMDock
-
-2. Using the OS Python 3 environment. To do this, proceed as follows:
-
+If you want to make changes to AMDock first clone this repo:
     
-    sudo apt install pymol openbabel
+    git clone https://github.com/Melarok/AMDock.git
 
-(Note that this version of AMDock works with openbabel 3.x)
+After you've made your changes, run the following command from inside the repo to install AMDock:
 
-    python3 -m pip install pdb2pqr PyQt5
-    python3 -m pip install git+https://github.com/Valdes-Tresanco-MS/AutoDockTools_py3
-    python3 -m pip install AMDock
-    
+    pip install -e .
+
 Before using AMDock, you most install the PyMOL plugin (grid_amdock.py).
-
-If it does not appear please follow the instructions:
-- Download the grid_amdock.py file
+If it is not installed automatically follow the instructions:
+- Download the grid_amdock.py file from this repo
 - Open PyMOL > Plugins > Manager Plugins > Install New Plugin > Choose File and select the grid_amdock.py file
 - Restart PyMOL
 
-
 To open AMDock, type in the terminal:
-    
+
     AMDock
 
-Note: You can add this line to the .bashrc file to activate de AMDock conda environment and execute AMDock directly
+## Documentation & tutorials
 
-    alias amdock="conda activate AMDock; AMDock"
+Manual, tutorials and test files are located in the **Doc** folder.
+They may be out of date. Please check the wiki https://github.com/Valdes-Tresanco-MS/AMDock-win/wiki
 
-For macOS users, 
+## Cite us
 
-
-To view the update history, please check Changes_History file
-
-**TUTORIALS**
-
-Please, check the wiki https://github.com/Valdes-Tresanco-MS/AMDock-win/wiki
-
-[<img src="./AMDock/AMDock/images/jetbrains-variant-4.png" height="100" align="right" />](https://www.jetbrains.com/?from=https://github.com/Valdes-Tresanco-MS/AMDock)
+Valdes-Tresanco, M.S., Valdes-Tresanco, M.E., Valiente, P.A. and Moreno E. AMDock: a versatile graphical tool for
+assisting molecular docking with Autodock Vina and Autodock4. Biol Direct 15, 12 (2020). https://doi.org/10.1186/s13062-020-00267-2
+ 
+<a href="https://www.scimagojr.com/journalsearch.php?q=5800173376&amp;tip=sid&amp;exact=no" title="SCImago Journal &amp; Country Rank"><img border="0" src="https://www.scimagojr.com/journal_img.php?id=5800173376" alt="SCImago Journal &amp; Country Rank"/></a>
 
 ## Support
+[<img src="./AMDock/data/jetbrains-variant-4.png" height="100" align="right" />](https://www.jetbrains.com/?from=https://github.com/Valdes-Tresanco-MS/AMDock)
 This project is possible thanks to the Open Source license of the 
-[JetBrains](https://www.jetbrains.com/?from=https://github.com/Valdes-Tresanco-MS/AMDock
-) programs.
+[JetBrains](https://www.jetbrains.com/?from=https://github.com/Valdes-Tresanco-MS/AMDock) programs.
